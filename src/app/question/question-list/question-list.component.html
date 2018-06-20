@@ -1,4 +1,5 @@
-<mat-card *ngFor="let question of data">
+<div class="hotel-list">
+<mat-card class="hotel-panel-mat hotel-panel-xs" *ngFor="let question of data">
   <mat-list>
     <mat-list-item [routerLink]="['questions', question._id]">
       <img matListAvatar class="header-image-cd">{{ question.user.image }}
@@ -45,3 +46,4 @@
     </div>
   </mat-list>
 </mat-card>
+</div>

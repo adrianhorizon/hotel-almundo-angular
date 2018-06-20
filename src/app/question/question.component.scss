@@ -1,20 +1,20 @@
 @import '../../../src/sass/variables';
-.publicar {
-  font-size: 15px;
-  color: #00C853;
-}
-
-.full-width {
-  width: 100%;
-}
-.divider {
-  margin-top: 20px !important;
-  margin: 0 auto;
-  max-width: 600px;
-  width: 100%;
-}
- 
-button {
-  text-align: right;
-  background-color: #00C853;
+@import '../../../src/sass/mixins';
+.hotel-list-panel {
+  @media screen and (min-width: $layout-xs) {
+    .divider {
+      margin-top: 20px !important;
+      margin: 0 auto;
+      max-width: 600px;
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: $layout-mat) {
+    .divider {
+      margin-top: 20px !important;
+      margin: 0 auto;
+      max-width: 45%;
+      width: 100%;
+    }
+  }
 }

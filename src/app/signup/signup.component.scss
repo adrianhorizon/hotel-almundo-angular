@@ -1,4 +1,5 @@
 @import '../../../src/sass/variables';
+@import '../../../src/sass/mixins';
 .signup-view {
   mat-card {
     @media screen and(min-width: $layout-sm) {

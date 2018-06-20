@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Question } from './question.model';
-import { Answer } from '../answer/answer.model';
 import { Http, Headers, Response } from '@angular/http';
 import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/toPromise';
@@ -45,23 +44,6 @@ export class QuestionService {
     const token = this.getToken();
 
     return this.http.post(this.questionsUrl + token, body, { headers: headers })
-      .map((response: Response) => response.json())
-      .catch((error: Response) => Observable.throw(error.json()));
-  }
-
-  addAnswer(answer: Answer) {
-    const a = {
-      description: answer.description,
-      question: {
-        _id: answer.question._id
-      }
-    };
-    const body = JSON.stringify(a);
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const url = this.questionsUrl + answer.question._id + 'answers';
-    const token = this.getToken();
-
-    return this.http.post(url + token, body, { headers })
       .map((response: Response) => response.json())
       .catch((error: Response) => Observable.throw(error.json()));
   }

@@ -20,7 +20,6 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { PrincipalPageComponent } from './principal-page/principal-page.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
-import { AnswerComponent } from './answer/answer.component';
 import { QuestionComponent } from './question/question.component';
 import { QuestionDetailComponent } from './question/question-detail/question-detail.component';
 import { QuestionListComponent } from './question/question-list/question-list.component';
@@ -35,7 +34,6 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     SigninComponent,
     SignupComponent,
     QuestionComponent,
-    AnswerComponent,
     QuestionDetailComponent,
     QuestionListComponent,
     SideBarComponent

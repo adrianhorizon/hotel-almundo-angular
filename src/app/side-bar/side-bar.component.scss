@@ -1,13 +1,14 @@
 @import '../../../src/sass/variables';
+@import '../../../src/sass/mixins';
 .side-main {
-  @media screen and (min-width: $layout-xs) {
+  @media screen and (min-width: $layout-xs) and (max-width: $layout-mat) and (orientation: landscape) {
     .mat-side {
       @include mat-panel-xs;
     }
     .expansion-none {
       @include none-display;
     }
-    .panel-responsive {
+    .panel-responsive { 
       @include display-block;
     }
   }
@@ -17,9 +18,6 @@
     }
     .expansion-none {
       @include display-block;
-    }
-    .panel-responsive {
-      @include none-display;
     }
   }
   .example-headers-align .mat-expansion-panel-header-title,
@@ -42,6 +40,7 @@
   }
   .svg { 
     width: 20px;
+    height: 20px;
     filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg);
   }
   .text-h5 {

@@ -1,4 +1,5 @@
 @import '../../../src/sass/variables';
+@import '../../../src/sass/mixins';
 .top-view {
   @media screen and(min-width: $layout-xs) {
     mat-card {
