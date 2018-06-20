@@ -1,0 +1,36 @@
+<div class="login-view">
+  <mat-grid-list cols="5" rowHeight="fit">
+    <mat-grid-tile colspan="5" rowspan="2" class="card-image">
+      <mat-progress-bar *ngIf="loginInProcess" mode="indeterminate"></mat-progress-bar>
+      <mat-card>
+        <mat-card-header>
+          <a [routerLink]="['/']">
+            <img src="../../assets/img/logo-almundo.svg" class="header-image">
+          </a>
+        </mat-card-header>
+        <mat-card-content>
+          <form novalidate [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+              <input matInput placeholder="Email o Usuario" formControlName="email" required>
+              <mat-error *ngIf="signinForm.invalid">{{getErrorMessage()}} email</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="Contraseña" formControlName="password" [type]="hide ? 'password' : 'text'" required>
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+              <mat-error *ngIf="signinForm.invalid">{{getErrorMessage()}} Contraseña</mat-error>
+            </mat-form-field>
+            <br>
+            <button type="submit" mat-raised-button color="primary">INICIAR SESIÓN</button>
+            <p>¿Aún no tienes cuenta?
+              <a mat-button color="primary" [routerLink]="['/signup']">Resgístrate aquí</a>
+            </p>
+            <p>¿Quieres volver?
+              <a mat-button color="primary" [routerLink]="['/']">Inicio</a>
+            </p>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -1,0 +1,56 @@
+@import '../../../src/sass/variables';
+.side-main {
+  @media screen and (min-width: $layout-xs) {
+    .mat-side {
+      @include mat-panel-xs;
+    }
+    .expansion-none {
+      @include none-display;
+    }
+    .panel-responsive {
+      @include display-block;
+    }
+  }
+  @media screen and (min-width: $layout-mat) {
+    .mat-side {
+      @include mat-panel-mat;
+    }
+    .expansion-none {
+      @include display-block;
+    }
+    .panel-responsive {
+      @include none-display;
+    }
+  }
+  .example-headers-align .mat-expansion-panel-header-title,
+  .example-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+  }
+  .example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .space {
+    @include space-span;
+  }
+  .text-panel {
+    justify-content: center;
+  }
+  .text-panel-align {
+    align-items: center;
+    color: $hover-link;
+  }
+  .svg { 
+    width: 20px;
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg);
+  }
+  .text-h5 {
+    align-items: center;
+    display: inline-flex;
+    vertical-align: middle;
+    color: #00aaff;
+  }
+  .color-icon {
+    color: #00aaff;
+  }
+}

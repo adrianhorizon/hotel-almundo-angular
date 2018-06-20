@@ -1,0 +1,45 @@
+<div class="signup-view">
+  <mat-grid-list cols="5" rowHeight="fit">
+    <mat-grid-tile colspan="5" rowspan="2" class="card-image">
+        <mat-progress-bar *ngIf="signupProcess" mode="indeterminate"></mat-progress-bar>
+        <mat-card>
+          <form novalidate [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+              <input matInput placeholder="Nombre y Apellido" formControlName="firstName" required>
+              <mat-error *ngIf="signupForm.invalid">{{getErrorMessage()}} nombre y apellido</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="Nombre de Usuario" formControlName="userName" required>
+              <mat-error *ngIf="signupForm.invalid">{{getErrorMessage()}} usuario</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="Correo electronico" formControlName="email" required>
+              <mat-error *ngIf="signupForm.invalid">{{getErrorMessage()}} email</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="Contraseña" formControlName="password" required [type]="hide ? 'password' : 'text'">
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+              <mat-error *ngIf="signupForm.invalid">{{getErrorMessage()}} contraseña</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="Confirmar contraseña" type="password" formControlName="passwordSegurity" required>
+              <mat-error *ngIf="signupForm.invalid">{{getErrorMessage()}} contraseña</mat-error>
+            </mat-form-field>
+            <br>
+            <div class="button-row">
+              <button type="submit" mat-raised-button color="primary">Registrarse</button>
+              <button type="reset" mat-raised-button color="warn">Limpiar</button>
+            </div>
+            <p>
+              ¿Ya tienes un usuario?
+              <a mat-button color="primary" [routerLink]="['/signin']">Iniciar sesion</a>
+            </p>
+          </form>
+        </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

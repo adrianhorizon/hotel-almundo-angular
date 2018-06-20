@@ -1,0 +1,40 @@
+@import '../../../src/sass/variables';
+.login-view {
+  mat-card {
+    background-color: #E0E0E0;
+    @media(min-width: $layout-sm) {
+      @include media-card;
+    }
+    .mu-logo {
+      @include logo-almundo;
+    }
+  }
+  .card-image {
+    background-image: url(../../assets/img/idea.jpg);
+    @include card-img;
+  }
+  button {
+    @include button-signin;
+  }
+  mat-grid-list {
+   @include grid-responsive; 
+  }
+  form {
+    @include form-responsive;
+  }
+  p {
+    @include text-responsive;
+  }
+  a {
+    @include a-none;
+  }
+  a:link {
+    color: $visited-link;
+  }
+  a:hover {
+    color: $hover-link;
+  }
+  a:active {
+    color: $hover-active;
+  }
+}

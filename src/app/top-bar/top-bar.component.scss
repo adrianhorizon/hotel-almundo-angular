@@ -1,0 +1,27 @@
+@import '../../../src/sass/variables';
+.top-view {
+  @media screen and(min-width: $layout-xs) {
+    mat-card {
+      @include media-card;
+    } 
+    .menu-responsive {
+      @include none-display;
+    }
+  }
+  @media screen and (max-width: $layout-xs ) {
+    .header-image {
+      background-image: url('../../assets/img/logo-almundo.svg');
+      @include header-responsive;
+    }
+    .men-responsive {
+        @include none-display;
+    }
+  }
+  .space {
+    @include space-span;
+  }
+  .header-image {
+    background-image: url('../../assets/img/logo-almundo.svg');
+    background-size: cover;
+  }
+}

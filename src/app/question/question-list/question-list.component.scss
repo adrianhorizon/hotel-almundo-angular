@@ -1,0 +1,81 @@
+.font-text {
+  font-size: 14px;
+  margin-top: 20px !important;
+}
+
+.color-icon {
+  color: #03A9F4;
+}
+
+.color-advert {
+  color: #FFEB3B;
+}
+
+.color-black {
+  color: #424242;
+}
+.space {
+  margin-left: 30px;
+}
+.position-icon {
+  position: relative;
+}
+.space-span {
+  flex: 1 1 auto;
+}
+.header-image-cd {
+  background-image: url('https://i.pinimg.com/originals/9d/44/b9/9d44b99d4d0952f51bf52fdb2c05986e.jpg');
+  background-size: cover;
+}
+.header-image {
+  background-image: url('https://i.pinimg.com/236x/41/37/55/413755ddc53f5113dd4458e625351896--anime-cat-manga-anime.jpg');
+  background-size: cover;
+}
+.publicar {
+  font-size: 15px;
+  color: #00C853;
+  margin-left: 20px;
+}
+
+.full-width {
+  width: 90%;
+  height: 46px;
+  border-style: groove;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}  
+h3 {
+  color: #00C853;
+}
+
+small {
+  color: #c3c3c3;
+}
+
+button {
+  color: #00C853;
+}
+
+mat-card {
+  margin-bottom: 20px;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #00aaff;
+  opacity: 1;
+  margin-left: 20px !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #00aaff;
+  opacity: 1;
+  margin-left: 20px !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #00aaff;
+  opacity: 1;
+  margin-left: 20px !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #00aaff;
+  opacity: 1;
+  margin-left: 20px !important;
+}

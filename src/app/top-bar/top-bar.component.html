@@ -1,0 +1,42 @@
+<div class="top-view">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <a [routerLink]="['/']">
+        <img src="../../assets/img/logo-almundo.svg" class="header-image">
+      </a>
+      <span class="space"></span>
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-responsive">
+          <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" [overlapTrigger]="false">
+        <button mat-menu-item *ngIf="!isLoggedIn()" [routerLink]="['signup']">
+          Registrate
+        </button>
+        <button mat-menu-item *ngIf="!isLoggedIn()" [routerLink]="['signin']">
+          Iniciar sesión
+        </button>
+      </mat-menu>
+      <button mat-button *ngIf="!isLoggedIn()" [routerLink]="['signup']" class="men-responsive">
+        Registrate
+      </button>
+      <button mat-button *ngIf="!isLoggedIn()" [routerLink]="['signin']" class="men-responsive">
+        Iniciar sesión
+      </button>
+      <div *ngIf="isLoggedIn()">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon mat-card-avatar class="header-image"></mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" [overlapTrigger]="false">
+          <button mat-menu-item>
+            <mat-icon>account_circle</mat-icon>
+            <small>{{ fullName() }} (Mi perfil)</small>
+          </button>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <small>Cerrar Sesion</small>
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

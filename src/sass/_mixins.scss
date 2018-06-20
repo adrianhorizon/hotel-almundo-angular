@@ -1,0 +1,125 @@
+@mixin space-span {
+  flex: 1 1 auto;
+}
+
+@mixin logo-almundo {
+  width: 126px;
+  height: 55px;
+  margin-bottom: 8px;
+}
+
+@mixin none-display {
+  display: none;
+}
+
+@mixin display-block {
+  display: block;
+}
+
+@mixin header-logo {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 92px;
+  height: auto;
+  cursor: pointer;
+}
+
+@mixin header-responsive {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+
+@mixin a-none {
+  text-decoration: none;
+}
+
+@mixin media-card {
+  min-width: 450px;
+  min-height: 290px;
+}
+
+@mixin card-img {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin button-signup {
+  width: 47%;
+  height: 36px;
+  color: white;
+  margin: 0 auto;
+}
+
+@mixin button-signin {
+  width: 100%;
+  height: 36px;
+  color: white;
+  text-align: center;
+}
+
+@mixin text-responsive {
+  font-size: 12px;
+  opacity: 100%;
+  font-weight: 500;
+  text-align: left;
+  text-align: center;
+  color: black;
+}
+
+@mixin form-responsive {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@mixin grid-responsive {
+  background-color: #eef1f5;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+}
+
+@mixin mat-side-xs {
+  margin-top: 20px !important;
+  margin: 0 auto;
+  max-width: 550px;
+  width: 100%;
+}
+
+@mixin mat-side-mat {
+  left: 20px;
+  margin-top: 20px;
+  position: absolute;
+  width: 240px;
+}
+
+@mixin mat-panel-xs {
+  margin-top: 20px !important;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+@mixin mat-panel-mat {
+  left: 20px;
+  margin-top: 20px;
+  position: absolute;
+  width: 300px;
+}
+
+// @include header-image 
+// @include max-width

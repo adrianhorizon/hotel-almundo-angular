@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <small> - {{question.createdAt | amLocale: 'es' | amTimeAgo }}</small>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{question.description}}</p>
+  </mat-card-content>
+</mat-card>
+<div class="answers">
+  <h3 id="title">Respuestas</h3>
+  <ul class="answers-list" *ngIf="question.answers.length > 0">
+    <li *ngFor="let answer of question.answers">
+      <h5>
+        {{ answer.user.firstName }}
+        <small>{{answer.createdAt | amLocale: 'es' | amTimeAgo }}</small>
+      </h5>
+      <p class="description">
+        {{ answer.description }}
+      </p>
+    </li>
+  </ul>
+  <p *ngIf="question.answers.length === 0">Sé el primero en responder esta pregunta</p>
+  <app-answer [question]="question" class="answer-form"></app-answer>
+</div>

@@ -1,0 +1,46 @@
+@import '../../../src/sass/variables';
+.signup-view {
+  mat-card {
+    @media screen and(min-width: $layout-sm) {
+      @include media-card;
+    }
+  }
+  .card-image {
+    background-image: url(../../assets/img/register.jpg);
+    @include card-img;
+  }
+  .button-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  button {
+    @include button-signup;
+  }
+  mat-grid-list {
+    @include grid-responsive;
+  }
+  mat-card-title {
+    text-align: center;
+    font-size: 18px;
+    color: #cccccc;
+  }
+  form {
+    @include form-responsive;
+  }
+  p {
+    @include text-responsive;
+  }
+  a {
+    @include a-none;
+  }
+  a:link {
+    color: $visited-link;
+  }
+  a:hover {
+    color: $hover-link;
+  }
+  a:active {
+    color: $hover-active;
+  }
+}
