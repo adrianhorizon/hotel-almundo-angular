@@ -2,19 +2,15 @@
 @import '../../../src/sass/mixins';
 .hotel-list-panel {
   @media screen and (min-width: $layout-xs) {
-    .divider {
-      margin-top: 20px !important;
-      margin: 0 auto;
-      max-width: 600px;
-      width: 100%;
-    }
+    
   }
   @media screen and (min-width: $layout-mat) {
-    .divider {
-      margin-top: 20px !important;
-      margin: 0 auto;
-      max-width: 45%;
-      width: 100%;
-    }
+    
+  }
+  .divider {
+    margin-top: 20px !important;
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
   }
 }
