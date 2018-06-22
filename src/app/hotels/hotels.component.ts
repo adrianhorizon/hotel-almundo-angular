@@ -9,18 +9,22 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./hotels.component.scss']
 })
 export class HotelsComponent implements OnInit {
-  endpoint: string;
+
   data: Array<any>;
   api: string;
+  dataHotel: string;
 
   constructor(private http: HttpClient) {
-    this.endpoint = environment.endPoint;
+    this.dataHotel = environment.DataHotel;
    }
 
   ngOnInit() {
-     this.http.get(this.endpoint)
+  /*   this.http.get(this.dataHotel)
     .map(Response => Response)
     .catch(error => Observable.throw('error'))
-    .subscribe(res => this.data = res);
+    .subscribe(res => {
+      this.data = res
+      console.log(res);
+    }); */
   }
 }

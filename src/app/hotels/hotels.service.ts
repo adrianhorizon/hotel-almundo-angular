@@ -3,33 +3,32 @@ import { Http, Headers, Response } from '@angular/http';
 import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Observable';
-// tslint:disable-next-line:import-blacklist
 import 'rxjs/Rx';
 import { HttpParams, HttpHeaders, HttpClient } from '@angular/common/http';
-import { Question } from './hotels.model';
+import { Hotels } from './hotels.model';
 
 @Injectable()
 export class HotelService {
 
   data: any;
-  private questionsUrl: string;
+  private hotelsUrl: string;
 
   constructor(private http: HttpClient) {
-    this.questionsUrl = environment.apiUrl + 'questions';
+    this.hotelsUrl = environment.DataHotel + 'hotels'
   }
 
-  getQuestions(sort = '-createdAt'): Promise<void | Question[]> {
-    return this.http.get(`${this.questionsUrl}?sort=${sort}`)
+  getHotels(sort = '-createdAt'): Promise<void | Hotels[]> {
+    return this.http.get(`${this.hotelsUrl}?sort=${sort}`)
               .toPromise()
-              .then(response => response as Question[])
+              .then(response => response as Hotels[])
               .catch(this.handleError);
   }
 
-  getQuestion(id): Promise<void | Question> {
-    const url = this.questionsUrl + id;
+  getQuestion(id): Promise<void | Hotels> {
+    const url = this.hotelsUrl + id;
     return this.http.get(url)
             .toPromise()
-            .then(response => response as Question)
+            .then(response => response as Hotels)
             .catch(this.handleError);
   }
 
@@ -38,12 +37,12 @@ export class HotelService {
     return `?token=${token}`;
   }
 
-  addQuestion(question: Question) {
+  addQuestion(question: Hotels) {
     const body = JSON.stringify(question);
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const token = this.getToken();
 
-    return this.http.post(this.questionsUrl + token, body, { headers: headers })
+    return this.http.post(this.hotelsUrl + token, body, { headers: headers })
       .map((response: Response) => response.json())
       .catch((error: Response) => Observable.throw(error.json()));
   }

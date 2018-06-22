@@ -10,7 +10,7 @@ const APP_ROUTES = [
     { path: '', component: PrincipalPageComponent, pathMatch: 'full' },
     { path: 'signin', component: SigninComponent },
     { path: 'signup', component: SignupComponent },
-    { path: 'hotels', children: HOTELS_ROUTES },
+    { path: 'hotel', children: HOTELS_ROUTES },
     { path: '**', component: Page404Component }
 ];
 

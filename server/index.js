@@ -4,7 +4,7 @@ import app from './app'
 import mongoose from 'mongoose'
 import { mongoUrl, port } from './config'
 
-const debug = new Debug('testfront:root')
+const debug = new Debug('hotels:root')
 
 mongoose.Promise = global.Promise
 

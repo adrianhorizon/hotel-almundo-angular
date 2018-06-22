@@ -1,7 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import path from 'path'
-import { auth, question } from './routes'
+import { auth } from './routes'
 
 const app = express()
 
@@ -23,6 +23,5 @@ if (process.env.NODE_ENV === 'production') {
 
 
 app.use('/api/auth', auth)
-app.use('/api/questions', question)
 
 export default app

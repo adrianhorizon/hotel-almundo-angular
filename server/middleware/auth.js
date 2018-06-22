@@ -2,7 +2,7 @@ import Debug from 'debug'
 import { secret } from '../config'
 import jwt from 'jsonwebtoken'
 
-const debug = new Debug('testfront:auth-middleware')
+const debug = new Debug('hotels:auth-middleware')
 
 export const required = (req, res, next) => {
   jwt.verify(req.query.token, secret, (err, token) => {

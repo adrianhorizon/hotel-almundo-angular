@@ -1,49 +1,15 @@
 <div class="hotel-list">
   <mat-card class="hotel-panel-mat hotel-panel-xs" *ngFor="let hotel of data">
-    <mat-list>
-      <mat-list-item [routerLink]="['hotels', hotel._id]">
-        <img matListAvatar class="header-image-cd">{{ hotel.user.image }}
-        <h3 mat-line>{{ hotel.user.name }}</h3>
-        <p mat-line>
-          <small>{{ hotel.createdAt | amLocale: 'es' | amTimeAgo }}</small>
-        </p>
-        <p mat-line class="font-text">{{ hotel.text }}</p>
+    <mat-list *ngIf="hotel">
+      <mat-list-item [routerLink]="['hotel', hotel._id]">
+        <img [src]="hotel.image" class="header-image-cd">
+        <h3 mat-line>{{ hotel.name }} {{ hotel.id }}</h3>
+        <small>{{ hotel.stars }}</small>
+            <mat-icon mat-list-icon>star_rate</mat-icon>
+        <p mat-line class="font-text">{{ hotel.price }}</p>
+        {{ hotel.length }}
       </mat-list-item>
-      <div>
-        <mat-list-item>
-          <button mat-button [matMenuTriggerFor]="menu">Reaccionar</button>
-          <mat-menu #menu="matMenu" yPosition="above" [overlapTrigger]="false">
-            <button matTooltip="Me gusta" matTooltipPosition="above" matTooltipShowDelay="300" mat-icon-button>
-              <mat-icon class="color-icon" aria-label="icon-button like">fiber_manual_record</mat-icon>
-            </button>
-            <button matTooltip="No me gusta" matTooltipPosition="above" matTooltipShowDelay="300" mat-icon-button color="warn">
-              <mat-icon aria-label="icon-button share">fiber_manual_record</mat-icon>
-            </button>
-            <button matTooltip="Me Divierte" matTooltipPosition="above" matTooltipShowDelay="300" class="color-advert" mat-icon-button>
-              <mat-icon aria-label="icon-button favorite">fiber_manual_record</mat-icon>
-            </button>
-            <button matTooltip="Me Encanta" matTooltipPosition="above" matTooltipShowDelay="300" mat-icon-button>
-              <mat-icon aria-label="icon-button neutral">fiber_manual_record</mat-icon>
-            </button>
-            <button matTooltip="Neutral" matTooltipPosition="above" matTooltipShowDelay="300" class="color-black" mat-icon-button>
-              <mat-icon aria-label="icon-button like">fiber_manual_record</mat-icon>
-            </button>
-          </mat-menu>
-          <span class="space"></span>
-          <button mat-button>Comentar</button>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>
-          <button class="color-black" mat-icon-button>
-            <mat-icon class="position-icon" style="margin-left: 35px;" aria-label="icon-button like">fiber_manual_record</mat-icon>
-          </button>
-          <button class="color-icon" mat-icon-button>
-            <mat-icon class="position-icon" style="margin-right: 20px;" aria-label="icon-button like">fiber_manual_record</mat-icon>
-          </button>
-          <span class="space-span"></span>
-          <small> {{ hotel.comments.length }} Comentarios </small>
-        </mat-list-item>
-      </div>
     </mat-list>
   </mat-card>
+  <mat-paginator [length]="5" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
   </div>

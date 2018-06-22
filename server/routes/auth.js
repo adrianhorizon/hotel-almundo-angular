@@ -9,7 +9,7 @@ import {
 } from 'bcryptjs'
 
 const app = express.Router()
-const debug = new Debug('testfront:auth')
+const debug = new Debug('hotels:auth')
 
 app.post('/signin', async (req, res, next) => {
   const { email, password } = req.body
