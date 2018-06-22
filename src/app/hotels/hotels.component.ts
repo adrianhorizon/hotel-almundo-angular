@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-// tslint:disable-next-line:import-blacklist
-import { Observable, ObjectUnsubscribedError } from 'rxjs';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-question',
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.scss']
+  selector: 'app-hotels',
+  templateUrl: './hotels.component.html',
+  styleUrls: ['./hotels.component.scss']
 })
-export class QuestionComponent implements OnInit {
+export class HotelsComponent implements OnInit {
   endpoint: string;
   data: Array<any>;
   api: string;

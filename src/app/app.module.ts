@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Routing } from './app.routing';
 
 import { AuthService } from './signin/auth.service';
-import { QuestionService } from './question/question.service';
+import { HotelService } from './hotels/hotels.service';
 
 import 'hammerjs';
 import { MomentModule } from 'angular2-moment';
@@ -20,10 +20,10 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { PrincipalPageComponent } from './principal-page/principal-page.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
-import { QuestionComponent } from './question/question.component';
-import { QuestionDetailComponent } from './question/question-detail/question-detail.component';
-import { QuestionListComponent } from './question/question-list/question-list.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { HotelsComponent } from './hotels/hotels.component';
+import { HotelsListComponent } from './hotels/hotels-list/hotels-list.component';
+import { HotelsDetailsComponent } from './hotels/hotels-details/hotels-details.component';
 
 @NgModule({
   declarations: [
@@ -33,10 +33,10 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     PrincipalPageComponent,
     SigninComponent,
     SignupComponent,
-    QuestionComponent,
-    QuestionDetailComponent,
-    QuestionListComponent,
-    SideBarComponent
+    SideBarComponent,
+    HotelsComponent,
+    HotelsListComponent,
+    HotelsDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +51,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
   ],
   providers: [
     AuthService,
-    QuestionService
+    HotelService
   ],
   bootstrap: [AppComponent]
 })

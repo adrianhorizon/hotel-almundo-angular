@@ -1,11 +1,12 @@
 <div class="login-view">
   <mat-grid-list cols="5" rowHeight="fit">
     <mat-grid-tile colspan="5" rowspan="2" class="card-image">
-      <mat-progress-bar *ngIf="loginInProcess" mode="indeterminate"></mat-progress-bar>
+      <div>
+        <mat-progress-bar *ngIf="loginInProcess" mode="indeterminate"></mat-progress-bar>
       <mat-card>
         <mat-card-header>
           <a [routerLink]="['/']">
-            <img src="../../assets/img/logo-almundo.svg" class="header-image">
+            <img class="header-image" src="../../assets/img/logo-almundo.svg">
           </a>
         </mat-card-header>
         <mat-card-content>
@@ -31,6 +32,7 @@
           </form>
         </mat-card-content>
       </mat-card>
+    </div>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

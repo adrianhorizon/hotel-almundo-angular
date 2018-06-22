@@ -4,13 +4,13 @@ import { PrincipalPageComponent } from './principal-page/principal-page.componen
 import { Page404Component } from './page404/page404.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
-import { QUESTION_ROUTES } from './question/question.routing';
+import { HOTELS_ROUTES } from './hotels/hotels.routing';
 
 const APP_ROUTES = [
     { path: '', component: PrincipalPageComponent, pathMatch: 'full' },
     { path: 'signin', component: SigninComponent },
     { path: 'signup', component: SignupComponent },
-    { path: 'questions', children: QUESTION_ROUTES },
+    { path: 'hotels', children: HOTELS_ROUTES },
     { path: '**', component: Page404Component }
 ];
 

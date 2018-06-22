@@ -2,7 +2,7 @@
 @import '../../../src/sass/mixins';
 .login-view {
   mat-card {
-    background-color: #E0E0E0;
+    background-color: #e7e7e7;
     @media(min-width: $layout-sm) {
       @include media-card;
     }
@@ -11,7 +11,7 @@
     }
   }
   .card-image {
-    background-image: url(../../assets/img/idea.jpg);
+    background-color: #f7f7f7;
     @include card-img;
   }
   button {
@@ -37,5 +37,8 @@
   }
   a:active {
     color: $hover-active;
+  }
+  .colorize-blue {
+    filter: brightness(0.5) sepia(1) hue-rotate(140deg) saturate(6);
   }
 }

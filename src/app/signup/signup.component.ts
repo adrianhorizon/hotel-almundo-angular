@@ -9,7 +9,7 @@ import { AuthService } from '../signin/auth.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  signupProcess: boolean;
+  signupProcess: any;
 
   email = new FormControl('', [Validators.required, Validators.email]);
 

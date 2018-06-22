@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Question } from './question.model';
 import { Http, Headers, Response } from '@angular/http';
 import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/toPromise';
@@ -7,9 +6,10 @@ import { Observable } from 'rxjs/Observable';
 // tslint:disable-next-line:import-blacklist
 import 'rxjs/Rx';
 import { HttpParams, HttpHeaders, HttpClient } from '@angular/common/http';
+import { Question } from './hotels.model';
 
 @Injectable()
-export class QuestionService {
+export class HotelService {
 
   data: any;
   private questionsUrl: string;

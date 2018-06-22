@@ -2,7 +2,7 @@
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <a [routerLink]="['/']">
-       <!-- <img src="../../assets/img/logo-almundo.svg" class="header-image"> -->
+       <img src="../../assets/img/logo-almundo.svg" class="header-image">
       </a>
       <span class="space"></span>
       <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-responsive">
@@ -24,7 +24,7 @@
       </button>
       <div *ngIf="isLoggedIn()">
         <button mat-icon-button [matMenuTriggerFor]="menu">
-          <mat-icon mat-card-avatar class="header-image"></mat-icon>
+          <img mat-card-avatar src="http://anime.es/wp-content/uploads/2013/05/Chi-s-sweet-home1.jpg">
         </button>
         <mat-menu #menu="matMenu" [overlapTrigger]="false">
           <button mat-menu-item>

@@ -1,21 +1,21 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Question } from '../question.model';
-import { QuestionService } from '../question.service';
-import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Question } from '../hotels.model';
+import { HotelService } from '../hotels.service';
 
 @Component({
-  selector: 'app-question-list',
-  templateUrl: './question-list.component.html',
-  styleUrls: ['./question-list.component.scss']
+  selector: 'app-hotels-list',
+  templateUrl: './hotels-list.component.html',
+  styleUrls: ['./hotels-list.component.scss']
 })
-export class QuestionListComponent implements OnInit {
+export class HotelsListComponent implements OnInit {
 
   data: any;
   endpoint: string;
 
-  constructor(private questionService: QuestionService, private http: HttpClient) {
+  constructor(private hotelService: HotelService, private http: HttpClient) {
     this.endpoint = environment.endPoint;
    }
 
@@ -24,7 +24,7 @@ export class QuestionListComponent implements OnInit {
   loading = true;
 
   ngOnInit() {
-      this.questionService
+      this.hotelService
       .getQuestions(this.sort)
       .then((questions: Question[]) => {
         this.questions = questions;

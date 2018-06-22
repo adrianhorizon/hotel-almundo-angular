@@ -1,16 +1,17 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Question } from '../question.model';
-import { QuestionService } from '../question.service';
+import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../environments/environment';
+import { Observable } from 'rxjs';
+import { Question } from '../hotels.model';
+import { HotelService } from '../hotels.service';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
-import { Observable } from 'rxjs/Observable';
+
 @Component({
-  selector: 'app-question-detail',
-  templateUrl: './question-detail.component.html',
-  styleUrls: ['./question-detail.component.scss']
+  selector: 'app-hotels-details',
+  templateUrl: './hotels-details.component.html',
+  styleUrls: ['./hotels-details.component.scss']
 })
-export class QuestionDetailComponent implements OnInit, OnDestroy {
+export class HotelsDetailsComponent implements OnInit {
 
   question?: Question;
   loading = true;
@@ -19,7 +20,7 @@ export class QuestionDetailComponent implements OnInit, OnDestroy {
   endpoint: string;
 
   constructor(
-    private questionService: QuestionService,
+    private hotelService: HotelService,
     private route: ActivatedRoute,
     private http: HttpClient
   ) {
@@ -28,7 +29,7 @@ export class QuestionDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.questionService
+      this.hotelService
         .getQuestion(params.id)
         .then((question: Question) => {
           this.question = question;
@@ -46,3 +47,4 @@ export class QuestionDetailComponent implements OnInit, OnDestroy {
   }
 
 }
+

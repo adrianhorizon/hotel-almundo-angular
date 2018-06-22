@@ -1,6 +1,7 @@
 <div class="signup-view">
   <mat-grid-list cols="5" rowHeight="fit">
     <mat-grid-tile colspan="5" rowspan="2" class="card-image">
+      <div>
         <mat-progress-bar *ngIf="signupProcess" mode="indeterminate"></mat-progress-bar>
         <mat-card>
           <form novalidate [formGroup]="signupForm" (ngSubmit)="onSubmit()">
@@ -40,6 +41,7 @@
             </p>
           </form>
         </mat-card>
+      </div>  
     </mat-grid-tile>
   </mat-grid-list>
 </div>
