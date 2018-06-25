@@ -1,5 +1,6 @@
 <div class="side-main">
   <mat-accordion class="example-headers-align mat-side expansion-none panel-responsive">
+    <mat-card class="expansion-none">Filtros</mat-card>
     <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
       <mat-expansion-panel-header class="panel-none">
         <mat-panel-title class="text-panel-align">
@@ -15,14 +16,19 @@
       </mat-expansion-panel-header>
 
       <ng-template matExpansionPanelContent>
-        <mat-form-field>
-          <input matInput placeholder="Nombre del hotel">
-        </mat-form-field>
-        <button mat-button color="primary">Aceptar</button>
+        <form>
+          <input matTooltip="Digite para buscar hotel" type="text" placeholder="Ingresa nombre del hotel" aria-label="Ingresa nombre del hotel"
+            matInput [formControl]="ControlHotel" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
+              <p [routerLink]="['hotelsNew', option.id]"> {{ option.name }}</p>
+            </mat-option>
+          </mat-autocomplete>
+        </form>
       </ng-template>
 
       <mat-action-row>
-        <button mat-button color="primary" (click)="nextStep()">Next</button>
+        <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
       </mat-action-row>
     </mat-expansion-panel>
 
@@ -42,17 +48,22 @@
 
       <ng-template matExpansionPanelContent>
         <mat-list dense>
-          <mat-selection-list>
+          <mat-selection-list #hotelOption>
             <mat-list-option checkboxPosition="before" role="option" aria-label="stars" *ngFor="let st of stars">
-            <mat-icon> {{st.icon}}</mat-icon> 
+              <mat-icon mat-list-icon class="svg-star">
+                {{ st.icon }}
+              </mat-icon>
             </mat-list-option>
+            <p>
+              Options selected: {{hotelOption.selectedOptions.selected.length}}
+            </p>
           </mat-selection-list>
         </mat-list>
       </ng-template>
 
       <mat-action-row>
-        <button mat-button color="warn" (click)="prevStep()">Previous</button>
-        <button mat-button color="primary" (click)="nextStep()">End</button>
+        <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+        <button mat-button color="primary" (click)="nextStep()">Cerrar</button>
       </mat-action-row>
     </mat-expansion-panel>
 

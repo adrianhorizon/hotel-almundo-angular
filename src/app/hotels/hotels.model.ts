@@ -1,23 +1,29 @@
 export class Hotels {
 
-    amenities: {
-      one: number;
-      two: number;
-      three: number;
-      four: number;
-    };
-    _id? : number;
+    _id: string;
     name: string;
     stars: number;
     price: number;
     image: string;
+    amenities: {
+      one: string;
+      two: string;
+      three: string;
+      four: string;
+    };
 
     constructor(
-      _id: number,
+      _id: string,
       name: string,
       stars: number,
       price: number,
       image: string,
+      _amenities: {
+        one: string;
+        two: string;
+        three: string;
+        four: string;
+      }
     ) {
       this._id = _id;
       this.name = name;
@@ -25,5 +31,4 @@ export class Hotels {
       this.price = price;
       this.image = image;
     }
-
   }

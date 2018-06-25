@@ -11,34 +11,42 @@ import { Hotels } from './hotels.model';
 export class HotelService {
 
   data: any;
-  private hotelsUrl: string;
+  hotelsUrl: string;
+  apiUrl: string;
 
   constructor(private http: HttpClient) {
-    this.hotelsUrl = environment.DataHotel + 'hotels'
+    this.hotelsUrl = environment.DataHotel;
   }
-
-  getHotels(sort = '-createdAt'): Promise<void | Hotels[]> {
+  // Method GET/Hotles api json 
+  getHotel() {
+    return this.http.get(this.hotelsUrl)
+    .toPromise()
+    .then(response => response as Hotels[])
+    .catch(this.handleError);
+  }
+  // Method GET/Hotels api Json sort id
+  getHotels(sort = '-id'): Promise<void | Hotels[]> {
     return this.http.get(`${this.hotelsUrl}?sort=${sort}`)
               .toPromise()
               .then(response => response as Hotels[])
               .catch(this.handleError);
   }
-
-  getQuestion(id): Promise<void | Hotels> {
-    const url = this.hotelsUrl + id;
+  // Method GET/Hotels/:id
+  getHotelsId(): Promise<void | Hotels> {
+    const url = this.hotelsUrl;
     return this.http.get(url)
             .toPromise()
             .then(response => response as Hotels)
             .catch(this.handleError);
   }
-
+  // Method GET/token/ using for assign user
   getToken() {
     const token = localStorage.getItem('token');
     return `?token=${token}`;
   }
-
-  addQuestion(question: Hotels) {
-    const body = JSON.stringify(question);
+  // Method POST/hotel/ create hotel 
+  addHotels(hotel: Hotels): Observable<any> {
+    const body = JSON.stringify(hotel);
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const token = this.getToken();
 
@@ -46,7 +54,7 @@ export class HotelService {
       .map((response: Response) => response.json())
       .catch((error: Response) => Observable.throw(error.json()));
   }
-
+  // Error message method
   handleError(error: any) {
     const errMsg = error.message ? error.message :
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';

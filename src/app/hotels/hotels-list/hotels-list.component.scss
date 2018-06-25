@@ -7,6 +7,10 @@
     .hotel-panel-mat {
       margin: 0 auto;
       width: 850px;
+      margin-bottom: 20px;
+    }
+    .button-xs {
+      width: 20% !important;
     }
   }
   .font-text {
@@ -33,6 +37,8 @@
   }
   .header-image-cd {
     background-size: cover;
+    max-width: 450px;
+    height: 250px;
   }
   .header-image {
     background-image: url('https://i.pinimg.com/236x/41/37/55/413755ddc53f5113dd4458e625351896--anime-cat-manga-anime.jpg');
@@ -43,44 +49,51 @@
     color: #00C853;
     margin-left: 20px;
   }
+  .button-xs {
+    width: 100%;
+    margin: auto;
+    left: 0;
+    text-align: center;
+    border-radius: 4px;
+  }
+  mat-divider.style3 {
+    border-top: 1px dashed #8c8b8b;
+  }
 }
 
-h3 {
-  color: #00C853;
+h2 {
+  text-align: center;
+  font-size: 30px !important;
+  font-weight: 200;
+  color: #ea6422;
+}
+
+h5 {
+  color: $hover-link;
+  margin-top: 0px;
+  font-size: 16px;
+  height: 0px;
+}
+
+h4 {
+  float: left;
+  margin: 0;
+  height: 0px;
 }
 
 small {
   color: #c3c3c3;
 }
 
-button {
-  color: #00C853;
+mat-card {
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+  display: block;
+  position: relative;
+  padding: 28px;
+  border-radius: 2px;
+  margin-bottom: 20px;
 }
 
-::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  color: #00aaff;
-  opacity: 1;
-  margin-left: 20px !important;
-}
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #00aaff;
-  opacity: 1;
-  margin-left: 20px !important;
-}
-
-:-ms-input-placeholder {
-  /* IE 10+ */
-  color: #00aaff;
-  opacity: 1;
-  margin-left: 20px !important;
-}
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  color: #00aaff;
-  opacity: 1;
-  margin-left: 20px !important;
+mat-icon {
+  color: #ea6422;
 }

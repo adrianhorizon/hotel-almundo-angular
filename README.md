@@ -1,33 +1,23 @@
-# Test
+# Tecnologias
 
-using angular 5, scss, webpack, nodejs, rxjs and mongoDB
+using angular 5, scss, webpack, nodejs, rxjs and mongoDB, API REST
 
-# Install
+# Instalacion
+
+-- install mongoDB
+-- mongod - run mongoDb
+## Tener instalado mongoDb para probar el registro con mongodb
 
 -- npm install
--- mongod
--- npm start
+-- npm run postinstall
+-- npm start - start project angular 5
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+-- si se quiere ver por una ip correr el comando ng serve --host < IP >
 
-## Code scaffolding
+## Documentos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+-- CRUD hotels using rest api and mongodb auth token user
+-- Este es un CRUD de hoteles de la prueba al mundo se penso primero el diseño como first mobile y se construyo con los tres tipo de de service con PROMISES, OBSERVABLES y la NORMAL
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+cualquier duda escribir al correo camilod4568@gmail.com

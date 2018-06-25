@@ -7,7 +7,7 @@
     }
   }
   .card-image {
-    background-color: #f7f7f7;
+    background-color: $color-card;
     @include card-img;
   }
   .button-row {
@@ -24,7 +24,7 @@
   mat-card-title {
     text-align: center;
     font-size: 18px;
-    color: #cccccc;
+    color: $color-mat;
   }
   form {
     @include form-responsive;

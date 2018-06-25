@@ -2,7 +2,7 @@
 @import '../../../src/sass/mixins';
 .login-view {
   mat-card {
-    background-color: #e7e7e7;
+    background-color: $color-mat-card;
     @media(min-width: $layout-sm) {
       @include media-card;
     }
@@ -11,7 +11,7 @@
     }
   }
   .card-image {
-    background-color: #f7f7f7;
+    background-color: $color-card;
     @include card-img;
   }
   button {

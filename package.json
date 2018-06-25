@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "concurrently -r \"npm run start:server\" \"npm run start:client\"",
-    "start:server": "NODE_ENV=development DEBUG=testfront* nodemon server/index.js --exec babel-node",
+    "start:server": "NODE_ENV=development DEBUG=hotels* nodemon server/index.js --exec babel-node",
     "start:client": "ng serve --open",
     "start-prod": "NODE_ENV=production node server.js",
     "test": "ng test",

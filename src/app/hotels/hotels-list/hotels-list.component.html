@@ -1,15 +1,24 @@
 <div class="hotel-list">
-  <mat-card class="hotel-panel-mat hotel-panel-xs" *ngFor="let hotel of data">
-    <mat-list *ngIf="hotel">
-      <mat-list-item [routerLink]="['hotel', hotel._id]">
-        <img [src]="hotel.image" class="header-image-cd">
-        <h3 mat-line>{{ hotel.name }} {{ hotel.id }}</h3>
-        <small>{{ hotel.stars }}</small>
-            <mat-icon mat-list-icon>star_rate</mat-icon>
-        <p mat-line class="font-text">{{ hotel.price }}</p>
-        {{ hotel.length }}
-      </mat-list-item>
-    </mat-list>
+  <mat-card class="hotel-panel-mat" *ngFor="let hotel of hotels">
+    <mat-card-header>
+      <mat-card-title>
+        <img class="header-image-cd resp-mat" mat-card-image src="../../../assets/img/hotels/{{hotel.image}}">
+
+        <h5>{{ hotel.name }}</h5>
+        <mat-icon>star</mat-icon> 
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <mat-divider class="style3"></mat-divider>
+      <h2 class="font-text">ARS
+        <strong>{{ hotel.price }}</strong>
+      </h2>
+    </mat-card-content>
+    <mat-card-actions>
+      <div>
+        <button mat-raised-button color="primary" class="button-xs" [routerLink]="['hotelsNew', hotel.id]">Ver hotel</button>
+      </div>
+    </mat-card-actions>
   </mat-card>
-  <mat-paginator [length]="5" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-  </div>
+</div>

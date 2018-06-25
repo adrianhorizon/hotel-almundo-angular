@@ -2,24 +2,24 @@
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <a [routerLink]="['/']">
-       <img src="../../assets/img/logo-almundo.svg" class="header-image">
+     <img src="../../assets/img/logo-almundo.svg" class="header-image">
       </a>
       <span class="space"></span>
-      <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-responsive">
+      <button mat-icon-button *ngIf="!isLoggedIn()" [matMenuTriggerFor]="menu" class="menu-responsive">
           <mat-icon>menu</mat-icon>
       </button>
       <mat-menu #menu="matMenu" [overlapTrigger]="false">
-        <button mat-menu-item *ngIf="!isLoggedIn()" [routerLink]="['signup']">
+        <button mat-menu-item *ngIf="!isLoggedIn()" [routerLink]="['/signup']">
           Registrate
         </button>
-        <button mat-menu-item *ngIf="!isLoggedIn()" [routerLink]="['signin']">
+        <button mat-menu-item *ngIf="!isLoggedIn()" [routerLink]="['/signin']">
           Iniciar sesión
         </button>
       </mat-menu>
-      <button mat-button *ngIf="!isLoggedIn()" [routerLink]="['signup']" class="men-responsive">
+      <button mat-button *ngIf="!isLoggedIn()" [routerLink]="['/signup']" class="men-responsive">
         Registrate
       </button>
-      <button mat-button *ngIf="!isLoggedIn()" [routerLink]="['signin']" class="men-responsive">
+      <button mat-button *ngIf="!isLoggedIn()" [routerLink]="['/signin']" class="men-responsive">
         Iniciar sesión
       </button>
       <div *ngIf="isLoggedIn()">
