@@ -3,7 +3,7 @@
 .login-view {
   mat-card {
     background-color: $color-mat-card;
-    @media(min-width: $layout-sm) {
+    @media(min-width: $layout-sm) and (orientation: landscape) {
       @include media-card;
     }
     .mu-logo {

@@ -2,7 +2,7 @@
 @import '../../../src/sass/mixins';
 .signup-view {
   mat-card {
-    @media screen and(min-width: $layout-sm) {
+    @media screen and(min-width: $layout-sm) and (orientation: landscape) {
       @include media-card;
     }
   }
