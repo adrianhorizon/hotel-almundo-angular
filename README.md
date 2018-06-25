@@ -21,3 +21,5 @@ using angular 5, scss, webpack, nodejs, rxjs and mongoDB, API REST
 -- Este es un CRUD de hoteles de la prueba al mundo se penso primero el diseño como first mobile y se construyo con los tres tipo de de service con PROMISES, OBSERVABLES y la NORMAL
 
 cualquier duda escribir al correo camilod4568@gmail.com
+
+Faltaron unas cosas de responsive y de el ID del hotel para invocarlo 
